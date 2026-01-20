@@ -1,0 +1,22 @@
+# Dinámica Solar & Fourier
+
+Este proyecto es una visualización interactiva de la **ecuación del tiempo** y la **dinámica orbital**, utilizando:
+
+- **HTML5 Canvas** para renderizar la órbita en tiempo real.
+- **Series de Fourier** para calcular la posición orbital y la ecuación del tiempo.
+- **Chart.js** para la gráfica de la serie completa (Ecuación del Tiempo).
+- **TailwindCSS** para el diseño de la interfaz.
+
+## Funcionalidades
+
+1.  **Visualizador Orbital**: Muestra cómo la órbita cambia de circular a elíptica ajustando la excentricidad.
+2.  **Ecuación del Tiempo**: Gráfica interactiva que muestra la discrepancia entre el tiempo solar aparente y el tiempo solar medio.
+3.  **Controles Interactivos**:
+    *   Slider de **Día del Año**: Navega por los 365 días para ver la posición de la Tierra.
+    *   Slider de **Excentricidad**: Permite modificar la excentricidad de la órbita para propósitos didácticos (de círculo perfecto a elipse exagerada).
+    *   **Reproducción Automática**: Animación del ciclo anual.
+
+## Autor
+
+**Ing. Miyako Morales & Ab. Jose Morales**
+Modelado Matemático Avanzado
