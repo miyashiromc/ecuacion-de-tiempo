@@ -50,17 +50,17 @@ Se abordan dos fenómenos principales:
 
 **Ing. Miyako Kushiro Morales Cobeña**  
 *(miyashiromc)*  
-*Especialista en Modelado Matemático Avanzado*
+*Entusiasta de la Programación y las Matemáticas*
 
 ---
 
 ### 📱 Conéctate conmigo
 
-¡Escanea el código QR o haz clic en los enlaces para más contenido de ingeniería y programación!
-
-![Código QR miyashiromc](miyashiromc_qr.png)
-
 <div align="center">
+
+<img src="miyashiromc_qr.png" width="150" alt="Código QR miyashiromc">
+
+<br><br>
 
 [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://www.tiktok.com/@kushiromc?is_from_webapp=1&sender_device=pc)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/miyashiromc/)
