@@ -1,32 +1,69 @@
-# Dinámica Solar & Fourier
+# ☀️ Dinámica Solar & Ecuación del Tiempo
 
-**🔗 VER ONLINE (Desde celular o PC):** [https://miyashiromc.github.io/ecuacion-de-tiempo/](https://miyashiromc.github.io/ecuacion-de-tiempo/)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-Este proyecto es una visualización interactiva de la **ecuación del tiempo** y la **dinámica orbital**, utilizando:
+> **Visualización interactiva de mecánica orbital y astronomía matemática.**  
+> Explora cómo la excentricidad de la órbita terrestre afecta nuestro tiempo solar.
 
-- **HTML5 Canvas** para renderizar la órbita en tiempo real.
-- **Series de Fourier** para calcular la posición orbital y la ecuación del tiempo.
-- **Chart.js** para la gráfica de la serie completa (Ecuación del Tiempo).
-- **TailwindCSS** para el diseño de la interfaz.
+---
 
-## Funcionalidades
+### 🚀 [**VER DEMOSTRACIÓN ONLINE**](https://miyashiromc.github.io/ecuacion-de-tiempo/)
+*(Compatible con móviles y escritorio)*
 
-1.  **Visualizador Orbital**: Muestra cómo la órbita cambia de circular a elíptica ajustando la excentricidad.
-2.  **Ecuación del Tiempo**: Gráfica interactiva que muestra la discrepancia entre el tiempo solar aparente y el tiempo solar medio.
-3.  **Controles Interactivos**:
-    *   Slider de **Día del Año**: Navega por los 365 días para ver la posición de la Tierra.
-    *   Slider de **Excentricidad**: Permite modificar la excentricidad de la órbita para propósitos didácticos (de círculo perfecto a elipse exagerada).
-    *   **Reproducción Automática**: Animación del ciclo anual.
+---
 
-## Autor
+## 📐 Sobre el Proyecto
 
-**Ing. Miyako Kushiro Morales Cobeña (miyashiromc)**
-Modelado Matemático Avanzado
+Este proyecto es una herramienta didáctica desarrollada para visualizar conceptos complejos de **Ingeniería Solar** y **Modelado Matemático**. Combina física orbital precisa con tecnologías web modernas para crear una experiencia de aprendizaje interactiva.
 
-## Redes Sociales
+Se abordan dos fenómenos principales:
+1.  **La Ecuación del Tiempo**: La diferencia entre el tiempo que marca un reloj (tiempo solar medio) y el tiempo que marca el sol (tiempo solar aparente).
+2.  **Mecánica Celeste Kepleriana**: Cómo una órbita elíptica difiere de una circular ideal.
+
+## ✨ Funcionalidades Principales
+
+*   **🌍 Simulador Orbital Kepleriano**: 
+    *   Implementación exacta de la **Primera Ley de Kepler**.
+    *   Fórmula polar exacta: $r(\theta) = \frac{a(1-e^2)}{1 + e \cos(\theta)}$
+    *   Visualiza en tiempo real la discrepancia orbital respecto a un círculo perfecto.
+*   **📈 Gráfica de Ecuación del Tiempo**: 
+    *   Visualización de la **Serie de Fourier** (Spencer 1971).
+    *   Muestra los adelantos y atrasos del sol en minutos a lo largo del año.
+*   **🎛️ Controles Interactivos**:
+    *   **Slider de Tiempo**: Viaja a través de los 365 días del año.
+    *   **Control de Excentricidad**: Modifica la forma de la órbita (de círculo a elipse extrema) para entender el impacto de la excentricidad ($e$).
+    *   **Modo Play**: Animación automática del ciclo anual.
+
+## 🛠️ Tecnologías Utilizadas
+
+*   **Core**: HTML5 Semántico, JavaScript (ES6+).
+*   **Estilos**: [Tailwind CSS](https://tailwindcss.com/) para un diseño responsivo y moderno ("Glassmorphism").
+*   **Visualización**: 
+    *   `HTML5 Canvas` para el renderizado orbital de alto rendimiento.
+    *   [Chart.js](https://www.chartjs.org/) para gráficas matemáticas interactivas.
+*   **Matemáticas**: Algoritmos personalizados portados desde MATLAB (`simulacion.m`).
+
+## 👨‍💻 Autor
+
+**Ing. Miyako Kushiro Morales Cobeña**  
+*(miyashiromc)*  
+*Especialista en Modelado Matemático Avanzado*
+
+---
+
+### 📱 Conéctate conmigo
+
+¡Escanea el código QR o haz clic en los enlaces para más contenido de ingeniería y programación!
 
 ![Código QR miyashiromc](miyashiromc_qr.png)
 
-*   **TikTok**: [@kushiromc](https://www.tiktok.com/@kushiromc?is_from_webapp=1&sender_device=pc)
-*   **Instagram**: [@miyashiromc](https://www.instagram.com/miyashiromc/)
-*   **Kick**: [miyashiromc](https://kick.com/miyashiromc)
+<div align="center">
+
+[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://www.tiktok.com/@kushiromc?is_from_webapp=1&sender_device=pc)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/miyashiromc/)
+[![Kick](https://img.shields.io/badge/Kick-53FC18.svg?style=for-the-badge&logo=kick&logoColor=black)](https://kick.com/miyashiromc)
+
+</div>
