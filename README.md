@@ -18,5 +18,5 @@ Este proyecto es una visualización interactiva de la **ecuación del tiempo** y
 
 ## Autor
 
-**Ing. Miyako Morales & Ab. Jose Morales**
+**Ing. Miyako Kushiro Morales Cobeña (miyashiromc)**
 Modelado Matemático Avanzado
