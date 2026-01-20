@@ -1,5 +1,7 @@
 # Dinámica Solar & Fourier
 
+**🔗 VER ONLINE (Desde celular o PC):** [https://miyashiromc.github.io/ecuacion-de-tiempo/](https://miyashiromc.github.io/ecuacion-de-tiempo/)
+
 Este proyecto es una visualización interactiva de la **ecuación del tiempo** y la **dinámica orbital**, utilizando:
 
 - **HTML5 Canvas** para renderizar la órbita en tiempo real.
