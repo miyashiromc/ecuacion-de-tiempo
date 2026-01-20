@@ -94,12 +94,12 @@
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 relative overflow-hidden">
                     <div
                         class="absolute top-0 right-0 bg-purple-100 text-purple-800 text-[10px] px-2 py-1 font-bold rounded-bl-lg">
-                        NUEVO: FOURIER ORBITAL</div>
+                        NUEVO: MODELO KEPLERIANO</div>
 
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">De Círculo a Elipse</h3>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">De Círculo a Elipse (Kepler)</h3>
                     <p class="text-xs text-slate-500 mb-4">
-                        Visualiza cómo el 1º Armónico de Fourier transforma una órbita circular ideal en una elíptica
-                        real.
+                        Visualiza cómo la excentricidad transforma la órbita según la <b>Solución Exacta de Kepler</b>
+                        (basada en simulacion.m).
                     </p>
 
                     <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 mb-4">
@@ -107,11 +107,11 @@
                             <span class="font-bold text-slate-600">Factor de "Aplastamiento" (Excentricidad)</span>
                             <span id="eccValue" class="font-mono text-purple-600">0.00 (Círculo)</span>
                         </div>
-                        <input type="range" id="eccSlider" min="0" max="40" value="1" step="1">
+                        <input type="range" id="eccSlider" min="0" max="60" value="1" step="1">
                         <div class="flex justify-between text-[10px] text-slate-400 mt-1">
                             <span>0 (Ideal)</span>
                             <span>0.017 (Tierra)</span>
-                            <span>0.4 (Exagerado)</span>
+                            <span>0.6 (Halley)</span>
                         </div>
                     </div>
 
@@ -125,9 +125,9 @@
                     </div>
 
                     <div class="mt-4 text-xs text-slate-600 bg-slate-50 p-3 rounded border border-slate-100 font-mono">
-                        <p>Radio r(Γ) = r₀ - <span class="text-red-500 font-bold">A·cos(Γ)</span></p>
-                        <p class="mt-1 text-[10px] text-slate-400">Donde <span class="text-red-500">Rojo</span> es la
-                            corrección de Fourier aplicada al radio medio.</p>
+                        <p>Radio r(θ) = <span class="text-slate-400">a(1-e²)</span> / <span
+                                class="text-purple-600 font-bold">(1 + e·cos(θ))</span></p>
+                        <p class="mt-1 text-[10px] text-slate-400">Modelo matemático exacto usado en `simulacion.m`.</p>
                     </div>
                 </div>
             </div>
@@ -210,12 +210,10 @@
             // Limpiar
             ctxOrbit.clearRect(0, 0, orbitCanvas.width, orbitCanvas.height);
 
-            // Factor de escala para visualización (0.017 es real, slider va de 0 a 0.4)
+            // Factor de escala
             const e = eccentricityFactor;
 
             // 1. DIBUJAR EL SOL (Foco)
-            // En una elipse real, el sol está en un foco. El centro de la elipse se desplaza c = a*e
-            // Para simplificar la visualización de Fourier: Dejamos el Sol al centro y deformamos el radio.
             ctxOrbit.beginPath();
             ctxOrbit.arc(cx, cy, 8, 0, 2 * PI);
             ctxOrbit.fillStyle = '#f59e0b'; // Amarillo Sol
@@ -224,7 +222,7 @@
             ctxOrbit.fill();
             ctxOrbit.shadowBlur = 0;
 
-            // 2. DIBUJAR ÓRBITA "IDEAL" (Círculo - Esfera Celeste concepto)
+            // 2. DIBUJAR ÓRBITA "IDEAL" (Círculo)
             ctxOrbit.beginPath();
             ctxOrbit.strokeStyle = '#334155'; // Gris oscuro
             ctxOrbit.setLineDash([5, 5]);
@@ -233,17 +231,19 @@
             ctxOrbit.stroke();
             ctxOrbit.setLineDash([]);
 
-            // 3. DIBUJAR ÓRBITA "REAL" (Elipse vía Fourier)
-            // r(θ) ≈ r0 * (1 - e * cos(θ)) -> Aproximación polar de primer orden
+            // 3. DIBUJAR ÓRBITA "REAL" (Elipse Kepleriana Exacta)
+            // Fórmula exacta: r(θ) = a * (1 - e^2) / (1 + e * cos(θ))
             ctxOrbit.beginPath();
-            ctxOrbit.strokeStyle = '#a855f7'; // Morado Fourier
+            ctxOrbit.strokeStyle = '#a855f7'; // Morado Kepler
             ctxOrbit.lineWidth = 2;
 
             for (let angle = 0; angle <= 2 * PI; angle += 0.05) {
-                // Aplicamos la transformación armónica
-                const r = baseRadius * (1 - e * Math.cos(angle));
+                // Cálculo del radio exacto
+                const r = (baseRadius * (1 - e * e)) / (1 + e * Math.cos(angle));
+
                 const x = cx + r * Math.cos(angle);
-                const y = cy + r * Math.sin(angle); // Coordenada Y invertida en canvas no afecta círculo
+                const y = cy + r * Math.sin(angle);
+
                 if (angle === 0) ctxOrbit.moveTo(x, y);
                 else ctxOrbit.lineTo(x, y);
             }
@@ -251,14 +251,12 @@
             ctxOrbit.stroke();
 
             // 4. DIBUJAR LA TIERRA ACTUAL
-            // Radio actual según la fórmula
-            // Nota: Gamma empieza en Enero (Perihelio aprox), donde cos(0)=1, r es mínimo.
-            // Tierra más cerca = Perihelio.
-            const r_now = baseRadius * (1 - e * Math.cos(gamma));
+            // Radio actual según la fórmula exacta
+            const r_now = (baseRadius * (1 - e * e)) / (1 + e * Math.cos(gamma));
             const x_earth = cx + r_now * Math.cos(gamma);
             const y_earth = cy + r_now * Math.sin(gamma);
 
-            // Vector Radio Base (Gris)
+            // Vector Radio Base
             ctxOrbit.beginPath();
             ctxOrbit.moveTo(cx, cy);
             // Punto en el círculo ideal
@@ -268,8 +266,7 @@
             ctxOrbit.strokeStyle = 'rgba(255,255,255,0.2)';
             ctxOrbit.stroke();
 
-            // Vector Diferencia Fourier (Rojo)
-            // Dibuja una línea desde el círculo ideal hasta la elipse real
+            // Vector Diferencia (Rojo)
             ctxOrbit.beginPath();
             ctxOrbit.moveTo(x_ideal, y_ideal);
             ctxOrbit.lineTo(x_earth, y_earth);
@@ -287,7 +284,7 @@
             ctxOrbit.fillStyle = '#fff';
             ctxOrbit.font = '10px monospace';
             if (e > 0.05) {
-                ctxOrbit.fillText("Δ Fourier", (x_ideal + x_earth) / 2 + 5, (y_ideal + y_earth) / 2);
+                ctxOrbit.fillText("Δ Kepler", (x_ideal + x_earth) / 2 + 5, (y_ideal + y_earth) / 2);
             }
         }
 
