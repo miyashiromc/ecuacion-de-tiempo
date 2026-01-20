@@ -50,7 +50,6 @@ Se abordan dos fenómenos principales:
 
 **Ing. Miyako Kushiro Morales Cobeña**  
 *(miyashiromc)*  
-*Entusiasta de la Programación y las Matemáticas*
 
 ---
 
