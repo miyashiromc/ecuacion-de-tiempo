@@ -20,3 +20,11 @@ Este proyecto es una visualización interactiva de la **ecuación del tiempo** y
 
 **Ing. Miyako Kushiro Morales Cobeña (miyashiromc)**
 Modelado Matemático Avanzado
+
+## Redes Sociales
+
+![Código QR miyashiromc](miyashiromc_qr.png)
+
+*   **TikTok**: [@kushiromc](https://www.tiktok.com/@kushiromc?is_from_webapp=1&sender_device=pc)
+*   **Instagram**: [@miyashiromc](https://www.instagram.com/miyashiromc/)
+*   **Kick**: [miyashiromc](https://kick.com/miyashiromc)
