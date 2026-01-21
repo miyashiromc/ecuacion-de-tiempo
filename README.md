@@ -57,9 +57,6 @@ Se abordan dos fenómenos principales:
 
 <div align="center">
 
-<img src="miyashiromc_qr.png" width="150" alt="Código QR miyashiromc">
-
-<br><br>
 
 [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://www.tiktok.com/@kushiromc?is_from_webapp=1&sender_device=pc)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/miyashiromc/)
